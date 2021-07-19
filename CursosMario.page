@@ -1,0 +1,33 @@
+<apex:page controller="CursosMarioController" tabStyle="Curso__c">
+    <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+        </head>
+        <body>
+            <apex:pageBlock title="Plataforma de Cursos do Mario">
+                <apex:form >
+                    <h6> Bem vindo, escolha um curso e bons estudos! </h6>
+                    <br/><br/>
+                    <apex:pageBlock title="Cursos Disponíveis:">
+                        <apex:repeat value="{!cursos}" var="curso">
+                            <p>Nome: {!curso.Name}</p>
+                            <apex:outputText value="{0,date,dd'/'MM'/'yyyy}">
+                                Data do curso:<apex:param value="{!curso.CreatedDate}" /> 
+                            </apex:outputText><p/>
+                            <apex:image value="{!curso.Link_da_Imagem_do_Curso__c}" width="350px" height="200px" />
+                            <p>{!curso.Descri_o_do_Curso__c}</p>
+                            <button type="button" class="btn btn-primary" 
+                                    onclick="location.href='{!curso.Link_do_Curso__c}'">ACESSAR CURSO</button>
+                            <hr/>
+                        </apex:repeat>
+                        
+                        <apex:outputText>
+                            <p>{!mensagemNaoHaCursos}</p>
+                        </apex:outputText>
+                    </apex:pageBlock>
+                </apex:form>
+            </apex:pageBlock>            
+        </body>
+    </html>
+</apex:page>
