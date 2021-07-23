@@ -22,8 +22,8 @@
                             <hr/>
                         </apex:repeat>
                         
-                        <apex:outputText>
-                            <p>{!mensagemNaoHaCursos}</p>
+                        <apex:outputText >
+                            <p>{!mensagem}</p>
                         </apex:outputText>
                     </apex:pageBlock>
                 </apex:form>
