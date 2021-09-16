@@ -1,5 +1,5 @@
 public class CursosMarioController {
-	public final List<Curso__c> cursos {get;set;}
+    public final List<Curso__c> cursos {get;set;}
     public final Boolean haCursos {get;set;}
     public final String mensagemNaoHaCursos {get;set;}
     
